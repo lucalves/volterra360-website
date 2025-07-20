@@ -2,8 +2,7 @@
 
 import { Resend } from "resend";
 
-// Crie a instância da Resend com seu API token
-const resend = new Resend("re_LbyWDrqu_J138tZrzWKNhFzGmcFRXKQbA");
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function submitContactForm(formData: FormData) {
   const name = formData.get("name") as string;
